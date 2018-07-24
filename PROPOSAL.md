@@ -23,6 +23,12 @@ Jeff feel free to adjust this... This is just what I am using at the moment and 
 - React
 - Redux
 
+I have been using create-react-app and also react-static. RS is nice tool because it builds out your permanent routes and you can use a CRA style SPA architecture/process on top of it. It also includes code-splitting and other nice things out of the box while still being a fairly low overhead package.
+
+### Design Code
+
+- Sass (if you want to start using it we can it's up to you)
+
 ### Development Workflow
 
 - Prettier
@@ -64,9 +70,9 @@ Although I haven't been the biggest tester I think we should try to incorporate 
 - Flip Orientation
 
 4.  JS Oriented Workflow
+    Other release avenues if the project goes well
 
-- Other release avenues if the project goes well
-- Election
+- Electron
 - Native Apps
 
 # Timeline Flow
