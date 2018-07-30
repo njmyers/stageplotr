@@ -88,3 +88,10 @@ Which order to do things...
 7.  Add Graphics
 
 In the end we should be able to have a nice looking collaborative project that we can use to represent ourselves!
+
+# Proposed Advanced Features
+
+- HOTKEYS!
+- Import Custom Icons
+- Map Metadata like name
+- Input List Generation?
