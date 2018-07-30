@@ -48,5 +48,8 @@
   },
   "lint-staged": {
     "src/**/*.{test.js,js,jsx,json,md}": ["prettier --write", "git add"]
+  },
+  "jest": {
+    "testURL": "http://localhost"
   }
 }

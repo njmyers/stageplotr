@@ -1,9 +1,11 @@
 import React from 'react';
-import { withSiteData } from 'react-static';
-//
+import { withSiteData, Link } from 'react-static';
 
 export default withSiteData(() => (
   <div>
-    <h1 style={{ textAlign: 'center' }}>Welcome to</h1>
+    <h1>Future Home of Plotr</h1>
+    <nav>
+      <Link to="/edit">Plotr</Link>
+    </nav>
   </div>
 ));

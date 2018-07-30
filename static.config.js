@@ -12,6 +12,10 @@ export default {
         component: 'src/pages/Home',
       },
       {
+        path: '/edit',
+        component: 'src/pages/Edit',
+      },
+      {
         is404: true,
         component: 'src/pages/404',
       },
