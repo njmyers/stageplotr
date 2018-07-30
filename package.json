@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://github.com/njmyers/stageplotr/issues"
   },
-  "homepage": "https://github.com/njmyers/stageplotr#readme",
+  "homepage": "https://stageplotr.netlify.com/",
   "scripts": {
     "precommit": "lint-staged",
     "test": "jest --watchAll",
