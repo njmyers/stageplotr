@@ -3,8 +3,17 @@
   "version": "0.0.1",
   "description": "stageplot creation software",
   "main": "index.js",
-  "keywords": ["stageplot", "react", "jest", "flow", "redux"],
-  "author": ["Nick Myers <nickmyers111@gmail.com>", "Jeff Hatcher"],
+  "keywords": [
+    "stageplot",
+    "react",
+    "jest",
+    "flow",
+    "redux"
+  ],
+  "author": [
+    "Nick Myers <nickmyers111@gmail.com>",
+    "Jeff Hatcher"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/njmyers/stageplotr/issues"
@@ -28,7 +37,8 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-static": "^5.9.7",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
@@ -39,6 +49,8 @@
     "lint-staged": "^7.2.0",
     "node-sass": "^4.7.2",
     "prettier": "^1.13.7",
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3",
     "sass-loader": "^6.0.6",
     "serve": "^6.1.0"
   },
@@ -47,7 +59,10 @@
     "url": "git+https://github.com/njmyers/stageplotr.git"
   },
   "lint-staged": {
-    "src/**/*.{test.js,js,jsx,json,md}": ["prettier --write", "git add"]
+    "src/**/*.{test.js,js,jsx,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "jest": {
     "testURL": "http://localhost"
