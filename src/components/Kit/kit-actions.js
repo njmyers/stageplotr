@@ -5,17 +5,17 @@
  * Sounds silly but it's just specifying which prop to update
  * Also you can pass in a validator function to give us warnings
  */
-const kitActionCreator = (validator) => (prop) => (value: number) => {
+const kitActionCreator = (validator) => (key) => (value: number) => {
   if (process.env.NODE_ENV !== 'production' && !validator(value)) {
     console.warn(`You are trying to set a kit property with an invalid value.
-      prop: ${prop}
+      key: ${key}
       value: ${value}
       validator: ${validator.name}`);
   }
 
   return {
     type: '@KIT/UPDATE_PROPERTY',
-    prop,
+    key,
     value,
   };
 };
@@ -32,11 +32,12 @@ const isValidPositionY = (value) => value > 0;
 const isValidScale = (value) => value > 20 && value < 200;
 
 /** Degree as whole number */
-const isValidRotation = (value) => value > 0 && value <= 360;
+const isValidRotation = (value) => value >= 0 && value <= 360;
 
 /** Max zIndex value */
 const isValidLayer = (value) => value >= 0 && value <= 16777271;
 
+/** future orientation validator */
 const isValidOrientation = (value) => true;
 
 // These are the actual action creators
@@ -53,12 +54,16 @@ const updateLayer = kitActionCreator(isValidLayer)('layer');
 
 const updateOrientation = kitActionCreator(isValidOrientation)('orientation');
 
-function createKit(value: number) {
-  return {
-    type: '@KIT/CREATE',
-    value,
-  };
-}
+type Fn<T> = (...args: Array<any>) => T;
+type ExtractReturn = <T>(Fn<T>) => T;
+
+export type Action =
+  | $Call<ExtractReturn, typeof updatePositionX>
+  | $Call<ExtractReturn, typeof updatePositionY>
+  | $Call<ExtractReturn, typeof updateScale>
+  | $Call<ExtractReturn, typeof updateRotation>
+  | $Call<ExtractReturn, typeof updateLayer>
+  | $Call<ExtractReturn, typeof updateOrientation>;
 
 export {
   updatePositionX,

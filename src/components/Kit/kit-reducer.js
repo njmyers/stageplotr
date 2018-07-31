@@ -1,8 +1,9 @@
 import type { Action } from './kit-actions';
+import type { Action as MapAction } from '../Map/map-actions';
 
 export type Kit = {
   /** a number id specifying which piece of kit (mapped to graphics/metadata) */
-  id: number,
+  typeID: number,
   /** number specifying the category of the kit */
   category: number,
   /** whole number pixel value for position on y axis */
@@ -19,8 +20,8 @@ export type Kit = {
   layer: number,
 };
 
-const initialKit = {
-  id: 0,
+export const initialKit: Kit = {
+  typeID: 0,
   category: 0,
   positionX: 0,
   positionY: 0,
@@ -30,18 +31,18 @@ const initialKit = {
   layer: 1,
 };
 
-function kitReducer(state: Kit = initialKit, action: Action) {
+function kitReducer(state: Kit = initialKit, action: Action & MapAction) {
   switch (action.type) {
     case '@KIT/UPDATE_PROPERTY':
       return {
         ...state,
-        [action.prop]: action.value,
+        [action.key]: action.value,
       };
     default:
-    case '@KIT/CREATE':
+    case '@MAP/CREATE_KIT':
       return {
-        ...state,
-        id: action.id,
+        ...initialKit,
+        typeID: action.typeID,
       };
       return state;
   }
