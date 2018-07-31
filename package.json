@@ -4,7 +4,10 @@
   "description": "stageplot creation software",
   "main": "index.js",
   "keywords": ["stageplot", "react", "jest", "flow", "redux"],
-  "author": ["Nick Myers <nickmyers111@gmail.com>", "Jeff Hatcher"],
+  "author": [
+    "Nick Myers <nickmyers111@gmail.com>",
+    "Jeff Hatcher <wjeffhatcher@gmail.com>"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/njmyers/stageplotr/issues"
