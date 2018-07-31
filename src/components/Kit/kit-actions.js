@@ -1,6 +1,6 @@
 // @flow
 
-type Keys =
+export type Keys =
   | 'positionX'
   | 'positionY'
   | 'scale'
@@ -80,7 +80,7 @@ const isValidLayer: Validator = (value) => value >= 0 && value <= 16777271;
  * So we can simply add these values with our scale values
  * https://css-tricks.com/snippets/css/flip-an-image/
  */
-const isValidOrientation: Validator = (value) => value === 0 || value === 1;
+const isValidOrientation: Validator = (value) => value === 0 || value === -1;
 
 // These are the actual action creator functions
 

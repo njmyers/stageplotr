@@ -14,7 +14,7 @@ describe('testing the kit actions', () => {
     expect(updateScale(100)).toHaveProperty('type');
     expect(updateRotation(0)).toHaveProperty('type');
     expect(updateLayer(0)).toHaveProperty('type');
-    expect(updateOrientation(false)).toHaveProperty('type');
+    expect(updateOrientation(0)).toHaveProperty('type');
   });
 
   test('it creates a kit action object with correct key', () => {
@@ -23,7 +23,7 @@ describe('testing the kit actions', () => {
     expect(updateScale(100).key).toBe('scale');
     expect(updateRotation(0).key).toBe('rotation');
     expect(updateLayer(0).key).toBe('layer');
-    expect(updateOrientation(false).key).toBe('orientation');
+    expect(updateOrientation(0).key).toBe('orientation');
   });
 
   test('it creates a kit action object with correct value', () => {
@@ -32,6 +32,6 @@ describe('testing the kit actions', () => {
     expect(updateScale(100).value).toBe(100);
     expect(updateRotation(0).value).toBe(0);
     expect(updateLayer(0).value).toBe(0);
-    expect(updateOrientation(false).value).toBe(false);
+    expect(updateOrientation(0).value).toBe(0);
   });
 });

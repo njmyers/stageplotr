@@ -82,12 +82,12 @@ describe('testing the base kit action/reducer', () => {
   });
 
   test('it updates a scale property', () => {
-    store.dispatch(updateOrientation(false));
+    store.dispatch(updateOrientation(-1));
     const state = store.getState();
     expect(state).toMatchObject({
       ...initialKit,
       typeID: 'b413eac0-94d1-11e8-af8b-b534b7557c3a',
-      orientation: false,
+      orientation: -1,
     });
   });
 });
