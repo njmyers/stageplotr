@@ -1,8 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`testing withKitState HOC sanity test it renders without crashing 1`] = `
+exports[`integration test withKitState HOC sanity test it renders without crashing 1`] = `
 Object {
-  "id": "928d2ca0-94e4-11e8-82e4-61f5917152d6",
+  "category": 0,
+  "layer": 1,
+  "orientation": 0,
+  "positionX": 0,
+  "positionY": 0,
+  "rotation": 0,
+  "scale": 100,
+  "typeID": 0,
   "updateLayer": [Function],
   "updateOrientation": [Function],
   "updatePositionX": [Function],
