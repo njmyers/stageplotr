@@ -1,1 +1,1 @@
-export { default } from './KitContainer';
+export { default } from './Kit';

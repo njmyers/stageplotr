@@ -1,8 +1,10 @@
-const enzyme = require('enzyme');
-const Adapter = require('enzyme-adapter-react-16');
-
-enzyme.configure({ adapter: new Adapter() });
-
 module.exports = {
   testURL: 'http://localhost',
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/build/*',
+    '/dist/*',
+    '/helpers/*',
+  ],
+  setupTestFrameworkScriptFile: '<rootDir>/jest.enzyme.js',
 };

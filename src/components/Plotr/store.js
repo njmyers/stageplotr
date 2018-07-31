@@ -1,12 +1,14 @@
-import { combineReducers, createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import rootReducer from './root-reducer';
 
-import mapReducer from '../Map/map-reducer';
-import kitReducer from '../Kit/kit-reducer';
+const middlewares = [];
 
-const rootReducer = combineReducers({
-  map: mapReducer,
-});
+if (process.env.NODE_ENV === `development`) {
+  const { logger } = require(`redux-logger`);
 
-const store = createStore(rootReducer);
+  middlewares.push(logger);
+}
+
+const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 export default store;

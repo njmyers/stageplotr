@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReduxHelper component works as described we can dispatch from the mounted helper 1`] = `
+Object {
+  "map": Object {
+    "height": 100,
+    "kits": Object {
+      "928d2ca0-94e4-11e8-82e4-61f5917152d6": Object {
+        "category": 0,
+        "layer": 1,
+        "orientation": 0,
+        "positionX": 0,
+        "positionY": 0,
+        "rotation": 0,
+        "scale": 100,
+        "typeID": 0,
+      },
+    },
+    "length": 1,
+    "name": "StagePlot",
+    "width": 100,
+  },
+}
+`;
+
+exports[`ReduxHelper component works as described we can mount a new component with a new store 1`] = `
+Object {
+  "map": Object {
+    "height": 100,
+    "kits": Object {
+      "928d2ca0-94e4-11e8-82e4-61f5917152d5": Object {
+        "category": 0,
+        "layer": 1,
+        "orientation": 0,
+        "positionX": 0,
+        "positionY": 0,
+        "rotation": 0,
+        "scale": 100,
+        "typeID": 0,
+      },
+      "928d2ca0-94e4-11e8-82e4-61f5917152d6": Object {
+        "category": 0,
+        "layer": 1,
+        "orientation": 0,
+        "positionX": 0,
+        "positionY": 0,
+        "rotation": 0,
+        "scale": 100,
+        "typeID": 0,
+      },
+    },
+    "length": 2,
+    "name": "StagePlot",
+    "width": 100,
+  },
+}
+`;

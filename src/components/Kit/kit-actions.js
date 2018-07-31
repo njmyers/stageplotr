@@ -10,6 +10,7 @@ export type Keys =
 
 export type Action = {
   type: '@KIT/UPDATE_PROPERTY',
+  id: string,
   key: Keys,
   value: number,
 };
@@ -23,7 +24,8 @@ type Validator = (value: number) => boolean;
  * Do we want stricter warnings?
  */
 const kitActionCreator = (validator: Validator) => (key: Keys) => (
-  value: number
+  value: number,
+  id: string
 ): Action => {
   if (process.env.NODE_ENV !== 'production' && !validator((value: number))) {
     console.warn(`You are trying to set a kit property with an invalid value.
@@ -34,6 +36,7 @@ const kitActionCreator = (validator: Validator) => (key: Keys) => (
 
   return {
     type: '@KIT/UPDATE_PROPERTY',
+    id,
     key,
     value,
   };

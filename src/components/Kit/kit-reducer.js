@@ -12,7 +12,7 @@ export type State = {
   +positionY: number,
   /** scale is expressed as a whole number percentage */
   +scale: number,
-  /** orientation is a boolean expressing whether or not the image is flipped */
+  /** orientation is a 0 or -1 expressing whether or not the image is flipped */
   +orientation: number,
   /** rotation is a whole number in degrees ie max 360 */
   +rotation: number,
