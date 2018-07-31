@@ -12,12 +12,12 @@ import {
 } from './kit-actions';
 
 /**
- * HOC to wrap a component with the appropriate kit values
+ * HOC to wrap a component with the appropriate kit values/methods
  * Since kits are stored in a map as a hash table you must also pass in id.
  * This will access the correct hashed object from the table and subscribe
  * your component to the redux updates.
  */
-const withKit = (id: string) => (Wrapped: React.ComponentType<any>) => {
+const withKitState = (id: string) => (Wrapped: React.ComponentType<any>) => {
   const mapStateToProps = (state) => ({
     ...state.map.kits[id],
   });
@@ -37,4 +37,4 @@ const withKit = (id: string) => (Wrapped: React.ComponentType<any>) => {
   )(Wrapped);
 };
 
-export default withKit;
+export default withKitState;
