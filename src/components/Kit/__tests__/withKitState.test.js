@@ -29,9 +29,19 @@ describe('integration test withKitState HOC', () => {
     expect(wrapper.props()).toMatchObject({ ...initialKit });
   });
 
-  test('it adds methods that dispatch actions', () => {
-    const wrapper = withShallowStore(<ConnectedKit />, store);
+  test('the component receives props from dispatched actions', () => {
     store.dispatch(updateScale(110, id));
+    const wrapper = withShallowStore(<ConnectedKit />, store);
     expect(wrapper.props().scale).toBe(110);
+  });
+
+  test('the component creates actions from react methods', () => {
+    const wrapper = withShallowStore(<ConnectedKit />, store);
+    expect(wrapper.props().updateScale(120)).toMatchObject({
+      id,
+      key: 'scale',
+      type: '@KIT/UPDATE_PROPERTY',
+      value: 120,
+    });
   });
 });
