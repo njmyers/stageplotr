@@ -1,0 +1,13 @@
+@import ../../sass/global
+
+.resize
+  cursor: pointer
+  pointer-events: all
+
+  &_rect
+    opacity: 0
+    transition: opacity, 0.25s
+
+  &:hover
+    .resize_rect
+      opacity: 1
