@@ -1,25 +1,43 @@
 // @flow
 import * as React from 'react';
+import uuid from 'uuid/v1';
 
-type State = {
-  thing: string,
+import Kit from '../Kit';
+import Resize from '../Resize';
+import type { State as MapState } from './map-reducer';
+
+type State = {};
+
+type Props = {
+  map: MapState,
 };
 
-type Props = {};
-
 class Map extends React.Component<Props, State> {
-  state = {
-    thing: null,
-  };
+  svg = null;
 
-  onClick = () => {
-    this.setState((state) => ({
-      thing: 'string',
-    }));
+  onCreate = () => {
+    this.props.createKit();
   };
 
   render() {
-    return <section>Future map</section>;
+    return (
+      <section>
+        <svg
+          ref={(svg) => (this.svg = svg)}
+          width={this.props.map.width}
+          height={this.props.map.height}
+        >
+          {Object.keys(this.props.map.kits).map((id) => {
+            return (
+              <Resize key={id}>
+                <Kit id={id} />
+              </Resize>
+            );
+          })}
+        </svg>
+        <button onClick={this.onCreate}>Create Kit!</button>
+      </section>
+    );
   }
 }
 

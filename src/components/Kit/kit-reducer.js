@@ -38,12 +38,12 @@ function kitReducer(state: State = initialKit, action: Action & MapAction) {
         ...state,
         [action.key]: action.value,
       };
-    default:
     case '@MAP/CREATE_KIT':
       return {
         ...initialKit,
         typeID: action.typeID,
       };
+    default:
       return state;
   }
 }

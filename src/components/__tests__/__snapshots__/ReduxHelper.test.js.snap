@@ -3,7 +3,7 @@
 exports[`ReduxHelper component works as described we can dispatch from the mounted helper 1`] = `
 Object {
   "map": Object {
-    "height": 100,
+    "height": 600,
     "kits": Object {
       "928d2ca0-94e4-11e8-82e4-61f5917152d6": Object {
         "category": 0,
@@ -18,7 +18,7 @@ Object {
     },
     "length": 1,
     "name": "StagePlot",
-    "width": 100,
+    "width": 800,
   },
 }
 `;
@@ -26,7 +26,7 @@ Object {
 exports[`ReduxHelper component works as described we can mount a new component with a new store 1`] = `
 Object {
   "map": Object {
-    "height": 100,
+    "height": 600,
     "kits": Object {
       "928d2ca0-94e4-11e8-82e4-61f5917152d5": Object {
         "category": 0,
@@ -51,7 +51,7 @@ Object {
     },
     "length": 2,
     "name": "StagePlot",
-    "width": 100,
+    "width": 800,
   },
 }
 `;

@@ -28,7 +28,7 @@ describe('it transforms a state object into css style object', () => {
     const style = kitStyleObject(exampleKitState);
 
     expect(style.transform).toBe(
-      'translateX(100) translateY(250) scale(1.1) rotateX(-1) rotate(90)'
+      'translateX(100px) translateY(250px) scale(1.1) rotateX(-1) rotate(90)'
     );
 
     expect(style.zIndex).toBe('1');

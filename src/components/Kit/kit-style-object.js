@@ -49,11 +49,11 @@ function scaleString(value: number): string {
 }
 
 function positionXString(value: number): string {
-  return `translateX(${value})`;
+  return `translateX(${value}px)`;
 }
 
 function positionYString(value: number): string {
-  return `translateY(${value})`;
+  return `translateY(${value}px)`;
 }
 
 function rotationString(value: number): string {

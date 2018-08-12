@@ -3,7 +3,7 @@ import kitReducer from '../Kit/kit-reducer';
 import type { Kit } from '../Kit/kit-reducer';
 import type { Action } from './map-actions';
 
-export type Map = {
+export type State = {
   name: string,
   width: number,
   height: number,
@@ -23,15 +23,15 @@ export type Map = {
 
 const initialState = {
   name: 'StagePlot',
-  width: 100,
-  height: 100,
+  width: 800,
+  height: 600,
   length: 0,
   // https://davidwalsh.name/object-create-null
   // blank dictionary
   kits: Object.create(null),
 };
 
-function mapReducer(state: Map = initialState, action: Action) {
+function mapReducer(state: State = initialState, action: Action) {
   switch (action.type) {
     // these are integrated with kits
     case '@MAP/CREATE_KIT':

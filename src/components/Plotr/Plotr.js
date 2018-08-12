@@ -10,7 +10,6 @@ class Plotr extends React.Component {
     return (
       <Provider store={store}>
         <main>
-          <Kit />
           <Map />
         </main>
       </Provider>
