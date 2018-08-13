@@ -3,7 +3,13 @@
   "version": "0.0.1",
   "description": "stageplot creation software",
   "main": "index.js",
-  "keywords": ["stageplot", "react", "jest", "flow", "redux"],
+  "keywords": [
+    "stageplot",
+    "react",
+    "jest",
+    "flow",
+    "redux"
+  ],
   "author": [
     "Nick Myers <nickmyers111@gmail.com>",
     "Jeff Hatcher <wjeffhatcher@gmail.com>"
