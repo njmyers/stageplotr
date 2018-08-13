@@ -1,5 +1,7 @@
 // @flow
 import * as React from 'react';
+// components
+import ResizeGraphic from './ResizeGraphic';
 // styles
 import './resize.sass';
 
@@ -17,8 +19,8 @@ type State = {
 
 class Resize extends React.Component<Props, State> {
   static defaultProps = {
-    strokeWidth: '3',
-    strokeDasharray: '7',
+    strokeWidth: '2',
+    strokeDasharray: '4',
     stroke: 'black',
     padding: 8,
   };
@@ -46,18 +48,13 @@ class Resize extends React.Component<Props, State> {
     return 'auto';
   };
 
-  rect = () => {
+  safeBBox = () => {
     if (this.childRef) {
       const { x, y, width, height } = this.childRef.getBBox();
-      return {
-        x: x - this.props.padding,
-        y: y - this.props.padding,
-        width: width + this.props.padding * 2,
-        height: height + this.props.padding * 2,
-      };
+      return { x, y, width, height };
     }
 
-    return { x1: 0, y1: 0, width: 0, height: 0 };
+    return { x: 0, y: 0, width: 0, height: 0 };
   };
 
   bubbleRef = (ref) => {
@@ -73,12 +70,7 @@ class Resize extends React.Component<Props, State> {
         onMouseEnter={this.onHover}
         onMouseLeave={this.onUnHover}
       >
-        <rect
-          className="resize_rect"
-          {...this.rect()}
-          {...this.props}
-          fill="none"
-        />
+        <ResizeGraphic {...this.props} {...this.safeBBox()} />
         {React.cloneElement(React.Children.only(this.props.children), {
           bubbleRef: this.bubbleRef,
           onMouseEnter: this.onHover,

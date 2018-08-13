@@ -2,6 +2,7 @@
 
 .resize
   cursor: pointer
+  cursor: grab
   pointer-events: all
 
   &_rect
@@ -11,3 +12,16 @@
   &:hover
     .resize_rect
       opacity: 1
+
+.resizeRect
+  &_topLeft
+    cursor: nw-resize
+
+  &_topRight
+    cursor: ne-resize
+
+  &_bottomLeft
+    cursor: sw-resize
+
+  &_bottomRight
+    cursor: se-resize

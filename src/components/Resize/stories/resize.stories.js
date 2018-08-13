@@ -1,20 +1,20 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select, object, number } from '@storybook/addon-knobs/react';
+import { number } from '@storybook/addon-knobs/react';
 
 import Resize from '../Resize';
 
 //https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components
 class Circle extends React.Component {
   render() {
-    const { color, bubbleRef, ...rest } = this.props;
+    const { color, radius, bubbleRef, ...rest } = this.props;
 
     return (
       <circle
         style={{ color: 'black', padding: '1rem' }}
-        cx="70"
-        cy="70"
-        r="60"
+        cx="100"
+        cy="100"
+        r={radius}
         fill={color}
         ref={bubbleRef}
         {...rest}
@@ -24,9 +24,9 @@ class Circle extends React.Component {
 }
 storiesOf('Stageplotr/2) Resize', module).add('Resize Demo', () => (
   <section>
-    <svg>
+    <svg width="800" height="600" viewBox="0 0 800 600">
       <Resize>
-        <Circle />
+        <Circle radius={number('radius', 40, { min: 0, max: 100 })} />
       </Resize>
     </svg>
   </section>
